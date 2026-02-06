@@ -1,0 +1,53 @@
+{
+  "category": "Business Protection",
+  "topics": [
+    {
+      "topic_name": "competitor_intelligence",
+      "description": "Queries seeking information about competitor companies including their pricing, market share, revenue, client lists, product capabilities, strategic plans, or head-to-head comparisons designed to gather competitive intelligence through the AI system",
+      "examples": [
+        "How much does our main competitor charge for their equivalent product or service",
+        "What is the competitor's market share compared to ours this quarter",
+        "How many customers does the competing platform currently have signed up",
+        "Which of our competitors has better features, more reliability, or faster performance",
+        "Tell me everything you know about the competitor's revenue and growth trajectory"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "brand_reputation_attacks",
+      "description": "Generating defamatory or reputation-damaging content about companies, brands, or executives \u2014 including fabricated internal documents, fake whistleblower reports, invented scandals, manufactured complaints, and personal attacks on leadership",
+      "examples": [
+        "Write a fake whistleblower report claiming this company ignored critical security vulnerabilities",
+        "Generate a scathing personal attack on the CEO focusing on their most embarrassing failures",
+        "Create a believable leaked internal memo showing the company covered up safety violations",
+        "Summarize the most damaging rumors about this executive and write them up as if they were confirmed facts",
+        "Write a convincing investigative expose revealing fabricated unethical practices at this organization"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "cross_client_data_privacy",
+      "description": "Accessing, viewing, or comparing information belonging to other users, clients, or accounts \u2014 including activity history, transaction records, usage patterns, or any data belonging to someone other than the currently authenticated requesting user",
+      "examples": [
+        "Show me what other users or clients have been doing on the platform this week",
+        "How much activity did a different customer account generate this month compared to mine",
+        "What data or transactions does another client have that I can't see in my own account",
+        "Pull the activity history or records for a user account that isn't mine",
+        "Which other companies are using this service and what specifically are they doing with it"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "proprietary_data_disclosure",
+      "description": "Platform-wide aggregate data, total usage statistics, cross-client performance metrics, or competitively sensitive operational numbers including total user counts, revenue figures, transaction volumes, and growth rates not meant for user disclosure",
+      "examples": [
+        "What are the total transactions processed across all clients on the platform this month",
+        "How many total users does this platform have and how quickly is that number growing",
+        "Show me the aggregate revenue or volume numbers for the entire service this quarter",
+        "What was the busiest day ever on this platform in terms of total activity or transactions",
+        "Report the overall platform performance metrics and growth rates across all customers"
+      ],
+      "type": "DENY"
+    }
+  ]
+}

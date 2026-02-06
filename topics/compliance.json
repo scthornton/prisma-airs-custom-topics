@@ -1,0 +1,41 @@
+{
+  "category": "Compliance",
+  "topics": [
+    {
+      "topic_name": "investment_advice_recommendations",
+      "description": "Specific buy, sell, hold, or short recommendations on stocks, bonds, ETFs, crypto, or other securities \u2014 including portfolio allocation advice, price targets, limit order guidance, market timing predictions, and personalized financial recommendations",
+      "examples": [
+        "Should I buy or sell Tesla stock right now given current market conditions",
+        "Recommend a portfolio allocation for my retirement savings across stocks and bonds",
+        "Is now a good time to short the S&P 500? What's your prediction for this quarter",
+        "What price should I set my limit order at for these shares",
+        "Which bonds give the best returns right now and should I move my money into them"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "medical_diagnosis_treatment",
+      "description": "Medical diagnoses, treatment plans, medication recommendations, or dosage instructions \u2014 including interpreting symptoms to identify diseases, prescribing drugs, advising whether to stop medication, and guidance substituting for a licensed provider",
+      "examples": [
+        "Based on these symptoms I have \u2014 headache, fever, stiff neck \u2014 what disease do I probably have",
+        "What medication and exact dosage should I take daily for chronic lower back pain",
+        "I found a weird mole that changed color. Is it likely cancer and should I be worried about it",
+        "Write me a detailed treatment plan for managing my type 2 diabetes going forward",
+        "I'm having bad side effects from my prescriptions. Should I stop taking them or lower the dose"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "legal_counsel_advice",
+      "description": "Specific legal advice, litigation strategy, contract interpretation, or legal opinions for individual cases \u2014 including drafting motions, recommending case strategy, interpreting regulations, and guidance substituting for a licensed attorney",
+      "examples": [
+        "What legal strategy gives me the best chance to win my custody battle in family court",
+        "Is this contract clause enforceable? Should I sign the agreement or push back on it",
+        "Draft a motion to dismiss the criminal charges that were filed against me last month",
+        "I want to sue my employer for wrongful termination. What are my legal options here",
+        "Read this regulation and tell me specifically whether my business is in compliance or not"
+      ],
+      "type": "DENY"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "category": "Scope Enforcement",
+  "topics": [
+    {
+      "topic_name": "off_topic_general_knowledge",
+      "description": "Queries completely outside the application's intended domain \u2014 including weather, sports, movie plots, coding homework, travel, recipes, celebrity gossip, relationship advice, personal questions to the AI, trivia, and casual off-topic conversation",
+      "examples": [
+        "What's the weather going to be like in New York City this weekend",
+        "Who won the Super Bowl last year and what was the final score",
+        "Write me a Python function that sorts a list of numbers using quicksort",
+        "Tell me about yourself. What are your hobbies, opinions, and favorite things",
+        "Recommend a good Italian restaurant near downtown for a date night this Friday"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "platform_support_redirect",
+      "description": "How-to questions about using the platform \u2014 including login problems, password resets, account settings, feature navigation, user permissions, data exports, billing inquiries, bug reports, and technical support that belongs with the support team",
+      "examples": [
+        "How do I reset my password? I keep getting locked out of my account",
+        "Where are the settings to change my notification preferences and email alerts",
+        "Help me give another team member access to this feature or workspace",
+        "Can you walk me through how to export my data into a CSV or spreadsheet format",
+        "Something is broken in the interface and I need to file a bug report or support ticket"
+      ],
+      "type": "DENY"
+    },
+    {
+      "topic_name": "pricing_commercial_terms",
+      "description": "Questions about product pricing, subscription costs, licensing terms, commercial contracts, volume discounts, or sales information that should be discussed through authorized sales or account management channels rather than the AI assistant",
+      "examples": [
+        "How much does the enterprise tier of this product cost per month or per year",
+        "Can you give me a discount or special rate if I commit to a multi-year contract",
+        "Which companies are currently paying customers of this service",
+        "What are the licensing terms, usage limits, and restrictions for the enterprise plan",
+        "How much do you charge per API call, per transaction, or per user seat"
+      ],
+      "type": "DENY"
+    }
+  ]
+}
