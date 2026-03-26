@@ -142,6 +142,7 @@ If a template doesn't fit your needs exactly, swap topics:
 | `medical_diagnosis_treatment` (healthcare only) | `proprietary_data_disclosure` or `off_topic_general_knowledge` |
 | `off_topic_general_knowledge` (general-purpose bots) | `self_harm_concealment` or `document_identity_forgery` |
 | `platform_support_redirect` (no support portal) | `racial_stereotyping_content` or `legal_counsel_advice` |
+| Any lower-priority slot (customer-facing bots) | `vulgarity_slang_and_insults` — blocks profanity, toxic personas, and multilingual vulgarity evasion |
 
 ### Adding ALLOW Topics
 

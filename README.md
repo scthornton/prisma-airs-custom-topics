@@ -2,7 +2,7 @@
 
 A curated library of custom topic guardrails for Palo Alto Networks Prisma AIRS Runtime Security.
 
-27 topics across 7 categories. All validated against platform constraints. Ready to deploy via the Management API or Strata Cloud Manager.
+28 topics across 7 categories. All validated against platform constraints. Ready to deploy via the Management API or Strata Cloud Manager.
 
 ## Background
 
@@ -22,7 +22,7 @@ Hard limits per topic: 1,000 characters total (name + description + all examples
 topics/                        JSON topic definitions by category
   ai-security.json             3 topics - system prompt leak, tool enum, jailbreak
   safety.json                  5 topics - CBRN, violence, drugs, self-harm, weapons
-  content-moderation.json      5 topics - hate, race, sexual, political, religion
+  content-moderation.json      6 topics - hate, race, sexual, political, religion, vulgarity
   compliance.json              3 topics - investment advice, medical, legal
   business-protection.json     4 topics - competitors, brand, cross-client, proprietary
   scope-enforcement.json       3 topics - off-topic, support redirect, pricing
@@ -80,7 +80,7 @@ python scripts/validate.py topics/safety.json   # single file
 ```bash
 python scripts/deploy.py topics/ --dry-run           # preview
 python scripts/deploy.py topics/ai-security.json     # deploy one category
-python scripts/deploy.py topics/                      # deploy all 27 topics
+python scripts/deploy.py topics/                      # deploy all 28 topics
 ```
 
 **6. Verify:**
@@ -106,7 +106,7 @@ python scripts/export_csv.py --api-ready        # API fields only
 
 ## Picking Your 20
 
-Each security profile supports up to 20 custom topics. This library has 27 so you can choose the ones that fit your deployment. A reasonable split:
+Each security profile supports up to 20 custom topics. This library has 28 so you can choose the ones that fit your deployment. A reasonable split:
 
 - 15 security and safety topics (from the category files)
 - 5 business-specific topics (customized to your application's domain)
@@ -119,7 +119,7 @@ See [docs/PROFILE-TEMPLATES.md](docs/PROFILE-TEMPLATES.md) for ready-made 20-top
 |---|---|---|---|
 | AI Security | ai-security.json | 3 | System prompt extraction, tool enumeration, jailbreaks |
 | Safety | safety.json | 5 | CBRN, violence, drugs, self-harm, weapons |
-| Content Moderation | content-moderation.json | 5 | Hate speech, racial content, sexual exploitation, politics, religion |
+| Content Moderation | content-moderation.json | 6 | Hate speech, racial content, sexual exploitation, politics, religion, vulgarity |
 | Compliance | compliance.json | 3 | Investment advice, medical diagnosis, legal counsel |
 | Business Protection | business-protection.json | 4 | Competitors, brand attacks, cross-client data, proprietary stats |
 | Scope Enforcement | scope-enforcement.json | 3 | Off-topic queries, support redirect, pricing info |
