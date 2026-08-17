@@ -1,3 +1,8 @@
-# Prisma AIRS Management SDK (TestPyPI)
-# Install with: pip install --extra-index-url https://test.pypi.org/simple/ -r requirements.txt
-pan-airs-api-mgmt-sdk==0.0.1a14
+# Prisma AIRS API Management SDK
+#
+# The SDK is now GA on public PyPI. The old TestPyPI alpha pin
+# (pan-airs-api-mgmt-sdk==0.0.1a14) is no longer needed.
+#
+# Requires Python 3.10 or newer.
+# Install with: pip install -r requirements.txt
+pan-airs-api-mgmt-sdk>=0.3.0

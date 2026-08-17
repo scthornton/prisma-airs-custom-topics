@@ -15,12 +15,46 @@ How to deploy custom topics from this library to your Prisma AIRS Runtime Securi
 
 ### SDK Setup (Methods 5+)
 
+The Management SDK requires **Python 3.10 or newer** and is published on public PyPI.
+
 ```bash
-pip install --extra-index-url https://test.pypi.org/simple/ pan-airs-api-mgmt-sdk==0.0.1a14
+python3 --version    # must be 3.10+
+
+pip install 'pan-airs-api-mgmt-sdk>=0.3.0'
 
 export MODEL_SECURITY_CLIENT_ID="your-client-id"
 export MODEL_SECURITY_CLIENT_SECRET="your-client-secret"
 ```
+
+**If you followed older instructions:** earlier versions of this guide pointed at a
+TestPyPI pre-release (`--extra-index-url https://test.pypi.org/simple/ pan-airs-api-mgmt-sdk==0.0.1a14`).
+That is no longer necessary. Install from public PyPI as shown above.
+
+**Troubleshooting `ERROR: Could not find a version that satisfies the requirement ... (from versions: none)`:**
+
+| Cause | Check | Fix |
+|---|---|---|
+| Python older than 3.10 | `python3 --version` | Install Python 3.10+ (`brew install python@3.12`) and create a fresh venv |
+| Corporate proxy or TLS inspection blocking the index | `pip download pan-airs-api-mgmt-sdk -d /tmp/x` | Point pip at your internal mirror, or add the corporate CA to pip's trust store |
+| Very old pip | `pip --version` | `python3 -m pip install --upgrade pip` |
+
+The `(from versions: none)` wording means pip found *zero* candidate files, not that
+one specific version was missing. The most common reason is the Python version gate,
+since pip filters on `Requires-Python` before it ever compares version numbers.
+
+### SDK version compatibility
+
+The scripts in this repo work with both the current GA SDK and the older TestPyPI
+alphas. Two things changed across that boundary:
+
+| | TestPyPI alphas (<= 0.0.1a15) | PyPI GA (>= 0.0.3) |
+|---|---|---|
+| List all topics | `retrieve_all_custom_topics_by_tsgid()` | `get_all_custom_topics()` |
+| `active` field on a topic | present | removed in 0.2.0 |
+| Default OAuth token URL | `auth.appsvc.paloaltonetworks.com` (TLS-resets on some networks) | `auth.apps.paloaltonetworks.com/am/...` (fixed in 0.3.0) |
+
+The scripts detect which method name the installed SDK exposes, so no code change is
+needed either way.
 
 ---
 

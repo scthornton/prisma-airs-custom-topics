@@ -21,7 +21,8 @@ try:
     from airs_api_mgmt.exceptions import MgmtSdkClientError
 except ImportError:
     print("ERROR: pan-airs-api-mgmt-sdk not installed.")
-    print("  pip install --extra-index-url https://test.pypi.org/simple/ pan-airs-api-mgmt-sdk==0.0.1a14")
+    print("  pip install 'pan-airs-api-mgmt-sdk>=0.3.0'")
+    print("  (requires Python 3.10+; check with: python3 --version)")
     sys.exit(1)
 
 RED = "\033[91m"
@@ -31,7 +32,21 @@ CYAN = "\033[96m"
 BOLD = "\033[1m"
 RESET = "\033[0m"
 
-TOKEN_URL = "https://auth.apps.paloaltonetworks.com/oauth2/access_token"
+TOKEN_URL = "https://auth.apps.paloaltonetworks.com/am/oauth2/access_token"
+
+
+# ── SDK compatibility ───────────────────────────────────────
+# The "list all topics" call was renamed between the TestPyPI alphas and the
+# GA releases on PyPI. Same arguments, same return type, different name:
+#   TestPyPI alphas (<= 0.0.1a15): retrieve_all_custom_topics_by_tsgid()
+#   PyPI GA (>= 0.0.3):            get_all_custom_topics()
+def list_topics_page(client: "MgmtClient", offset: int = 0, limit: int = 100):
+    """Fetch one page of custom topics, whichever SDK generation is installed."""
+    topics_api = client.custom_topics
+    fetch = getattr(topics_api, "get_all_custom_topics", None) or getattr(
+        topics_api, "retrieve_all_custom_topics_by_tsgid"
+    )
+    return fetch(offset=offset, limit=limit)
 
 
 def get_client() -> MgmtClient:
@@ -52,9 +67,7 @@ def fetch_all_topics(client: MgmtClient) -> dict[str, str]:
     topics = {}
     offset = 0
     while True:
-        resp = client.custom_topics.retrieve_all_custom_topics_by_tsgid(
-            offset=offset, limit=100
-        )
+        resp = list_topics_page(client, offset=offset, limit=100)
         for t in resp.custom_topics or []:
             topics[t.topic_name] = t.topic_id
         if not resp.next_offset or resp.next_offset <= offset:

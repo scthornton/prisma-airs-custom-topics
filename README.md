@@ -46,16 +46,33 @@ docs/
   PROFILE-TEMPLATES.md         Pre-built 20-topic combos by industry
   DEPLOYMENT-GUIDE.md          Deploy via SDK, API, UI, batch script, or Python
 
-requirements.txt               SDK dependency (pan-airs-api-mgmt-sdk 0.0.1a14)
+requirements.txt               SDK dependency (pan-airs-api-mgmt-sdk, PyPI)
 ```
 
 ## Quick Start
 
 **1. Install the SDK:**
 
+The Management SDK requires **Python 3.10 or newer**. Check first:
+
 ```bash
-pip install --extra-index-url https://test.pypi.org/simple/ pan-airs-api-mgmt-sdk==0.0.1a14
+python3 --version
 ```
+
+Then install from public PyPI:
+
+```bash
+pip install 'pan-airs-api-mgmt-sdk>=0.3.0'
+```
+
+> **Upgrading from an earlier version of this repo?** Older instructions
+> installed a pre-release from TestPyPI
+> (`--extra-index-url https://test.pypi.org/simple/ pan-airs-api-mgmt-sdk==0.0.1a14`).
+> The SDK is now GA on public PyPI, so drop the `--extra-index-url` flag and
+> the version pin. If pip reports
+> `Could not find a version that satisfies the requirement ... (from versions: none)`,
+> you are almost certainly on Python 3.9 or older, since every release of this
+> SDK requires 3.10+.
 
 **2. Set credentials:**
 
