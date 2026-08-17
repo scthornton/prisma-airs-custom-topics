@@ -2,7 +2,7 @@
 
 A curated library of custom topic guardrails for Palo Alto Networks Prisma AIRS Runtime Security.
 
-28 topics across 7 categories. All validated against platform constraints. Ready to deploy via the Management API or Strata Cloud Manager.
+29 topics across 7 categories. All validated against platform constraints. Ready to deploy via the Management API or Strata Cloud Manager.
 
 ## Background
 
@@ -97,7 +97,7 @@ python scripts/validate.py topics/safety.json   # single file
 ```bash
 python scripts/deploy.py topics/ --dry-run           # preview
 python scripts/deploy.py topics/ai-security.json     # deploy one category
-python scripts/deploy.py topics/                      # deploy all 28 topics
+python scripts/deploy.py topics/                      # deploy all 29 topics
 ```
 
 **6. Verify:**
